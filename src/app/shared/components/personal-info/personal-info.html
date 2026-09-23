@@ -1,0 +1,94 @@
+<p>personal-info works!</p>
+<div class="form-container">
+    <form [formGroup]="personalInformation" (ngSubmit)="nextSection()">
+        <div class="form-row">
+            <div class="form-group">
+                <label class="required" for="fullName">Full Name:</label>
+                <input type="text" id="fullName" formControlName="fullName" placeholder="Enter your full name" />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label class="required" for="email">Email:</label>
+                <input type="email" id="email" formControlName="email" placeholder="Enter your email" />
+                @if(personalInformation.get('email')?.invalid && personalInformation.get('email')?.touched) {
+                    <div class="error-message">Please enter a valid email address.</div>
+                }
+            </div>
+            <div class="form-group">
+                <label class="required" for="phone">Phone:</label>
+                <input type="text" id="phone" formControlName="phone" placeholder="Enter your phone number" />
+                @if(personalInformation.get('phone')?.invalid && personalInformation.get('phone')?.touched) {
+                    <div class="error-message">Please enter a valid phone number (10 digits).</div>
+                }
+            </div>
+        </div>
+
+        <hr>
+        <div class="form-row">
+            <div class="form-group">
+                <label class="required" for="linkedin">LinkedIn:</label>
+                <input type="text" id="linkedin" formControlName="linkedin"
+                    placeholder="Enter your complete LinkedIn profile URL" />
+            </div>
+            <div class="form-group">
+                <label class="required" for="github">GitHub:</label>
+                <input type="text" id="github" formControlName="github"
+                    placeholder="Enter your complete GitHub profile URL" />
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="portfolio">Portfolio:</label>
+                <input type="text" id="portfolio" formControlName="portfolio"
+                    placeholder="Enter your complete portfolio URL" />
+            </div>
+            <div class="form-group">
+                <label for="professionalUrl">Professional URL:</label>
+                <input type="text" id="professionalUrl" formControlName="professionalUrl"
+                    placeholder="Enter your other professional URL" />
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="form-row" formGroupName="currentAddress">
+            <div class="form-group">
+                <label class="required" for="currentCity">Current City:</label>
+                <input type="text" id="currentCity" formControlName="currentCity"
+                    placeholder="Enter your current city" />
+            </div>
+
+            <div class="form-group">
+                <label class="required" for="currentState">Current State:</label>
+                <input type="text" id="currentState" formControlName="currentState"
+                    placeholder="Enter your current state" />
+            </div>
+            <div class="form-group">
+                <label class="required" for="currentCountry">Current Country:</label>
+                <input type="text" id="currentCountry" formControlName="currentCountry"
+                    placeholder="Enter your current country" />
+            </div>
+        </div>
+        <hr>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="nationality">Nationality:</label>
+                <input type="text" id="nationality" formControlName="nationality"
+                    placeholder="Enter your nationality" />
+            </div>
+            <div class="form-group">
+                <label for="alternateContact">Alternate Contact:</label>
+                <input type="text" id="alternateContact" formControlName="alternateContact"
+                    placeholder="Enter your alternate contact information" />
+            </div>
+        </div>
+
+
+
+        <div class="btn-container">
+            <button class="next-btn" type="submit">Next</button>
+        </div>
+    </form>
+</div>
