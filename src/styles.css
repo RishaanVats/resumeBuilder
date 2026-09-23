@@ -1,1 +1,90 @@
 /* You can add global styles to this file, and also import other style files */
+.required::after {
+    color: red;
+    content: "*";
+    font-weight: bold;
+    margin-left: 2px;
+    margin-right: 5px;
+}
+
+.form-container {
+    max-width: 900px;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #9c9a9a;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Horizontal rows */
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    /* Space between the items */
+    align-items: flex-start;
+    /* Keeps inputs and buttons leveled */
+    margin-bottom: 15px;
+}
+
+/* Individual label + input block */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    /* Force label on top, input on bottom */
+    flex: 1 1 200px;
+    /* Allows inputs to grow and shrink responsibly */
+}
+
+/* Label adjustments */
+.form-group label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* Input fields matching your image style */
+.form-group input {
+    padding: 8px 12px;
+    border: 1px solid #999;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Horizontal line breaks */
+hr {
+    border: 0;
+    border-top: 1px solid #9c9c9c;
+    margin: 20px 0;
+}
+
+/* Next Button Styling */
+.btn-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.next-btn {
+    padding: 8px 20px;
+    border: 1px solid #333;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+.next-btn:hover {
+    background-color: #0b5ed7;
+    color: #fff;
+}
+
+/* Error message styling */
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+    font-style: italic;
+}
