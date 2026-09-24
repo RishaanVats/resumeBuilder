@@ -1,0 +1,23 @@
+@font-face{
+    font-family: 'ranoya';
+    src: url('../../assets/fonts/Ranoya-Regular.otf') format('opentype');
+    font-display: swap;
+}
+.homeHeader{
+    color: #333;
+    font-family: 'ranoya', Arial, sans-serif;
+}
+
+.hero-tag{
+    font-family: Arial, sans-serif;
+    color: #524f4f;
+}
+
+.start-btn{
+    max-width: 200px;
+}
+
+.footer-copy{
+    position: absolute;
+    bottom: 0px;
+}
