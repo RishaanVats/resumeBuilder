@@ -9,8 +9,12 @@ import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angula
   templateUrl: './personal-info.html',
 })
 export class PersonalInfo {
-  personalInformation = new FormGroup({
-    fullName: new FormControl('', [Validators.required]),
+
+  // Standard regular expression for matching URLs
+  private urlPattern = '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?';
+
+  public personalInformation = new FormGroup({
+    fullName: new FormControl('', [Validators.required, Validators.minLength(3)]),
     email: new FormControl('', [Validators.required, Validators.email, Validators.pattern(/^[^\s@]+@[^\s@]+\.[^\s@]+$/) ]),
     phone: new FormControl('', [Validators.required, Validators.pattern(/^\d{10}$/)]),
     currentAddress: new FormGroup({
@@ -18,12 +22,12 @@ export class PersonalInfo {
       currentState: new FormControl('', [Validators.required]),
       currentCountry: new FormControl('', [Validators.required]),
     }),
-    linkedin: new FormControl('', [Validators.required]),
-    github: new FormControl('', [Validators.required]),
-    portfolio: new FormControl(''),
-    professionalUrl: new FormControl(''),
-    nationality: new FormControl(''),
-    alternateContact: new FormControl(''),
+    linkedin: new FormControl('', [Validators.required, Validators.pattern(new RegExp(this.urlPattern))]),
+    github: new FormControl('', [Validators.required, Validators.pattern(new RegExp(this.urlPattern))]),
+    portfolio: new FormControl('', [Validators.pattern(new RegExp(this.urlPattern))]),
+    professionalUrl: new FormControl('', [Validators.pattern(new RegExp(this.urlPattern))]),
+    nationality: new FormControl('', [Validators.minLength(3)]),
+    alternateContact: new FormControl('', [Validators.pattern(/^\d{10}$/)]),
   });
 
   nextSection = (): void => {
