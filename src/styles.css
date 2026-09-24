@@ -57,7 +57,7 @@
 /* Horizontal line breaks */
 hr {
     border: 0;
-    border-top: 1px solid #9c9c9c;
+    border-top: 1px solid #636363;
     margin: 20px 0;
 }
 
@@ -70,15 +70,22 @@ hr {
 .next-btn {
     padding: 8px 20px;
     border: 1px solid #333;
-    background-color: #f0f0f0;
+    background-color: #0097dd;
     cursor: pointer;
     font-size: 14px;
     border-radius: 4px;
 }
 
-.next-btn:hover {
+.next-btn:hover:not(:disabled) {
     background-color: #0b5ed7;
     color: #fff;
+}
+
+.next-btn:disabled {
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed; /* Changes the mouse pointer to a crossed-out circle */
+  pointer-events: none; /* Completely blocks all hover and click states */
 }
 
 /* Error message styling */
