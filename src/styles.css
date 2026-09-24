@@ -64,7 +64,7 @@ hr {
 /* Next Button Styling */
 .btn-container {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
 }
 
 .next-btn {
@@ -76,12 +76,26 @@ hr {
     border-radius: 4px;
 }
 
+.previous-btn {
+    padding: 8px 20px;
+    border: 1px solid #333;
+    background-color: #888888;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
 .next-btn:hover:not(:disabled) {
     background-color: #0b5ed7;
     color: #fff;
 }
 
-.next-btn:disabled {
+.previous-btn:hover:not(:disabled) {
+    background-color: #6c6c6c;
+    color: #fff;
+}
+
+.next-btn:disabled, .previous-btn:disabled {
   background-color: #cccccc;
   color: #666666;
   cursor: not-allowed; /* Changes the mouse pointer to a crossed-out circle */
