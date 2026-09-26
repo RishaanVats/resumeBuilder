@@ -1,5 +1,6 @@
 <div class="form-container my-5">
-    <form [formGroup]="personalInformation" (ngSubmit)="nextSection()">
+    <h2>Personal Information</h2>
+    <form [formGroup]="personalInformation" (ngSubmit)="goNext()">
         <div class="form-row">
             <div class="form-group">
                 <label class="required" for="fullName">Full Name:</label>
@@ -16,7 +17,7 @@
             </div>
             <div class="form-group">
                 <label class="required" for="phone">Phone:</label>
-                <input type="text" id="phone" formControlName="phone" placeholder="Enter your phone number" />
+                <input type="tel" id="phone" formControlName="phone" placeholder="Enter your phone number" />
                 @if(personalInformation.get('phone')?.invalid && personalInformation.get('phone')?.touched) {
                     <div class="error-message">Please enter a valid phone number (10 digits).</div>
                 }
@@ -27,12 +28,12 @@
         <div class="form-row">
             <div class="form-group">
                 <label class="required" for="linkedin">LinkedIn:</label>
-                <input type="text" id="linkedin" formControlName="linkedin"
+                <input type="url" id="linkedin" formControlName="linkedin"
                     placeholder="Enter your complete LinkedIn profile URL" />
             </div>
             <div class="form-group">
                 <label class="required" for="github">GitHub:</label>
-                <input type="text" id="github" formControlName="github"
+                <input type="url" id="github" formControlName="github"
                     placeholder="Enter your complete GitHub profile URL" />
             </div>
         </div>
@@ -40,12 +41,12 @@
         <div class="form-row">
             <div class="form-group">
                 <label for="portfolio">Portfolio:</label>
-                <input type="text" id="portfolio" formControlName="portfolio"
+                <input type="url" id="portfolio" formControlName="portfolio"
                     placeholder="Enter your complete portfolio URL" />
             </div>
             <div class="form-group">
                 <label for="professionalUrl">Professional URL:</label>
-                <input type="text" id="professionalUrl" formControlName="professionalUrl"
+                <input type="url" id="professionalUrl" formControlName="professionalUrl"
                     placeholder="Enter your other professional URL" />
             </div>
         </div>
@@ -79,14 +80,14 @@
             </div>
             <div class="form-group">
                 <label for="alternateContact">Alternate Contact:</label>
-                <input type="text" id="alternateContact" formControlName="alternateContact"
+                <input type="tel" id="alternateContact" formControlName="alternateContact"
                     placeholder="Enter your alternate contact information" />
             </div>
         </div>
 
 
-        <div class="btn-container">
-            <button class="next-btn" type="submit" routerLink="/professional-summary" [disabled]="!personalInformation.valid">Next</button>
+        <div class="btn-container justify-content-center">
+            <button class="next-btn" type="submit" [disabled]="!personalInformation.valid">Next</button>
         </div>
     </form>
 </div>
