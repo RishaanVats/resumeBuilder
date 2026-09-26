@@ -41,7 +41,7 @@
         }
         <div class="btn-container mt-4">
             <button class="previous-btn" type="submit" routerLink="/personal-info">Previous</button>
-            <button class="next-btn" type="submit" [disabled]="!professionalSummaryForm.valid">Next</button>
+            <button class="next-btn" type="submit" routerLink="/work-experience" [disabled]="!professionalSummaryForm.valid">Next</button>
         </div>
     </form>
 </div>
