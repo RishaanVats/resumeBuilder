@@ -1,21 +1,37 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import '@angular/compiler';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { WorkExperience } from './work-experience';
 
 describe('WorkExperience', () => {
   let component: WorkExperience;
-  let fixture: ComponentFixture<WorkExperience>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [WorkExperience],
-    }).compileComponents();
+  beforeEach(() => {
+    component = new WorkExperience(
+      {
+        get: vi.fn(),
+        patch: vi.fn(),
+      } as any,
+      {
+        navigate: vi.fn(),
+      } as any,
+      {
+        snapshot: {},
+      } as any,
+    );
 
-    fixture = TestBed.createComponent(WorkExperience);
-    component = fixture.componentInstance;
-    await fixture.whenStable();
+    component.ngOnInit();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should disable endDate when currentlyWorking is checked', () => {
+    const endDateControl = component.workExperience.get('endDate');
+    expect(endDateControl?.disabled).toBe(false);
+
+    component.workExperience.get('currentlyWorking')?.setValue(true);
+
+    expect(endDateControl?.disabled).toBe(true);
   });
 });

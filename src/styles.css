@@ -45,7 +45,7 @@
 }
 
 /* Input fields matching your image style */
-.form-group input {
+.form-group input, select {
     padding: 8px 12px;
     border: 1px solid #999;
     border-radius: 4px;
