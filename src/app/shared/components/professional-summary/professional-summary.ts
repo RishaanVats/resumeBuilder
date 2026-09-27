@@ -26,7 +26,7 @@ export class ProfessionalSummary {
   }
 
   public professionalSummary = new FormGroup({
-    summary: new FormControl('', [Validators.required, Validators.minLength(10)]),
+    summary: new FormControl('', [Validators.required, Validators.minLength(20)]),
     skills: new FormControl('', [Validators.required, Validators.minLength(10)]),
     expYears: new FormControl('', [Validators.required, Validators.min(0), Validators.max(100)]),
     expMonths: new FormControl('', [Validators.required, Validators.min(0), Validators.max(11)]),

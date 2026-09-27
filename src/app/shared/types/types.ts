@@ -30,13 +30,13 @@ export interface workExperienceData {
     employmentType: 'Full-time' | 'Part-time' | 'Contract' | 'Internship' | 'Freelance';
     location: string;
     workType: 'On-site' | 'Remote' | 'Hybrid';
-    startDate: Date;
-    endDate?: Date;
+    startDate: string;
+    endDate?: string;
     currentlyWorking: boolean;
     jobDescription: string;
     keyProjects: string[];
     responsibilities: string;
-    technologiesUsed?: string[];
+    technologiesUsed: string[];
     achievements?: string;
     customInformation?: string;
 }

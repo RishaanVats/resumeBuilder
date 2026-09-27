@@ -6,6 +6,10 @@
                 <label class="required" for="summary">Professional Summary:</label>
                 <textarea id="summary" formControlName="summary" rows="5"
                     placeholder="Enter your professional summary"></textarea>
+                @if(professionalSummary.get('summary')?.invalid && professionalSummary.get('summary')?.touched)
+                {
+                <div class="error-message">Please enter a valid summary (min: 20 charecters)</div>
+                }
             </div>
         </div>
         <hr>
@@ -13,7 +17,10 @@
             <div class="form-group">
                 <label class="required" for="skills">Skills:</label>
                 <textarea id="skills" formControlName="skills" rows="5" placeholder="Enter your skills"></textarea>
-
+                @if(professionalSummary.get('skills')?.invalid && professionalSummary.get('skills')?.touched)
+                {
+                <div class="error-message">Please enter a valid summary (min: 10 charecters)</div>
+                }
             </div>
         </div>
         <hr>
@@ -40,7 +47,7 @@
         <div class="error-message">Please enter a valid number of months. (0-11)</div>
         }
         <div class="btn-container mt-4">
-            <button class="previous-btn" type="button" (click)="goPrevious()" >Previous</button>
+            <button class="previous-btn" type="button" (click)="goPrevious()">Previous</button>
             <button class="next-btn" type="submit" [disabled]="!professionalSummary.valid">Next</button>
         </div>
     </form>
