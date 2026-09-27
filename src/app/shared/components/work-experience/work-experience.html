@@ -52,6 +52,42 @@
                 </select>
             </div>
         </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="jobDescription">Job Description:</label>
+                <textarea id="jobDescription" formControlName="jobDescription" rows="5" placeholder="Enter your job's description"></textarea>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="responsibilities">Responsibilities:</label>
+                <textarea id="responsibilities" formControlName="responsibilities" rows="5" placeholder="Enter your responsibilites"></textarea>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="keyProjects">Key Projects:</label>
+                <textarea id="keyProjects" formControlName="keyProjects" rows="5" placeholder="Enter your key projects"></textarea>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="responsibilities">Responsibilities:</label>
+                <textarea id="responsibilities" formControlName="responsibilities" rows="5" placeholder="Enter your responsibilities"></textarea>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="technologiesUsed">Technologies Used:</label>
+                <textarea id="technologiesUsed" formControlName="technologiesUsed" rows="5" placeholder="Enter the technnologies used"></textarea>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="customInformation">Additional Information:</label>
+                <textarea id="customInformation" formControlName="customInformation" rows="5" placeholder="Enter any other relevant information (optional)"></textarea>
+            </div>
+        </div>
         <div class="btn-container mt-4">
             <button class="previous-btn" type="button" (click)="goPrevious()">Previous</button>
             <button class="next-btn" type="submit" [disabled]="!workExperience.valid">Next</button>
