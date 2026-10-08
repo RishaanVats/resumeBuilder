@@ -29,13 +29,15 @@
                 <span class="fw-bold">Total Experience</span>
                 <div class="form-group flex-row align-items-center">
                     <label class="required me-2 mb-0" for="expYears">Years:</label>
-                    <input type="number" id="expYears" formControlName="expYears" min="0" max="100" oninput="if(this.value < 0) this.value = 0; if(this.value > 100) this.value = 100;"
+                    <input type="number" id="expYears" formControlName="expYears" min="0" max="100"
+                        oninput="if(this.value < 0) this.value = 0; if(this.value > 100) this.value = 100;"
                         placeholder="Enter years of experience (0-100)" />
 
                 </div>
                 <div class="form-group flex-row align-items-center">
                     <label class="required me-2 mb-0" for="expMonths">Months:</label>
-                    <input type="number" id="expMonths" formControlName="expMonths" min="0" max="11" oninput="if(this.value < 0) this.value = 0; if(this.value > 11) this.value = 11;"
+                    <input type="number" id="expMonths" formControlName="expMonths" min="0" max="11"
+                        oninput="if(this.value < 0) this.value = 0; if(this.value > 11) this.value = 11;"
                         placeholder="Enter months of experience (0-11)" />
                 </div>
             </div>
